@@ -171,11 +171,11 @@ html{{scrollbar-width:thin;scrollbar-color:#d1b78c transparent}}
 .cart{{display:grid;place-items:center;top:10.5%;height:calc(var(--H) * .06);left:34%;right:34%;font:600 calc(var(--W) * .052)/1 var(--f-body);color:#7a5a14;background:rgba(155,122,47,.08)}}
 
 .cart{{position:absolute;display:grid;place-items:center;top:10%;left:22%;right:22%;height:calc(var(--H) * .056);border-radius:10px;font:700 calc(var(--W) * .046)/1 var(--f-body);color:#7a573c;background:rgba(150,105,65,.1);box-shadow:inset 0 0 0 1px rgba(150,105,65,.2)}}
-.vs{{position:absolute;inset:18% 10% 8% 10%;display:flex;flex-direction:column;justify-content:space-evenly;direction:rtl;overflow:hidden;box-sizing:border-box}}
-.bt{{display:flex;flex-direction:column;justify-content:center;width:100%;margin-block:1px;overflow:hidden}}
-.vl{{display:block;width:100%;direction:rtl;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--f-poem);font-size:calc(var(--W) * .046 * var(--fk,1));line-height:1.45;color:#33241a;box-sizing:border-box}}
-.vl.a{{text-align:right;padding-inline-start:4px;padding-inline-end:2px}}
-.vl.b{{text-align:left;padding-inline-end:4px;padding-inline-start:2px}}
+.vs{{position:absolute;inset:18% 11% 8% 11%;display:flex;flex-direction:column;justify-content:space-evenly;direction:rtl;overflow:hidden;box-sizing:border-box}}
+.bt{{display:flex;flex-direction:column;width:100%;margin-block:2px;overflow:hidden}}
+.vl{{display:block;max-width:76%;direction:rtl;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--f-poem);font-size:calc(var(--W) * .031 * var(--fk,1));line-height:1.55;color:#33241a;box-sizing:border-box}}
+.vl.a{{text-align:right;margin-inline-start:0;margin-inline-end:auto;padding-inline-start:4px}}
+.vl.b{{text-align:left;margin-inline-start:auto;margin-inline-end:0;padding-inline-end:4px}}
 
 .petals{{position:absolute;left:0;top:0;pointer-events:none;transition:opacity .4s}}
 .phone.drawing .petals,.phone.zooming .petals{{opacity:0}}
