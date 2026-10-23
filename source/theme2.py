@@ -170,20 +170,11 @@ html{{scrollbar-width:thin;scrollbar-color:#d1b78c transparent}}
 .pn{{display:none}}
 .cart{{display:grid;place-items:center;top:10.5%;height:calc(var(--H) * .06);left:34%;right:34%;font:600 calc(var(--W) * .052)/1 var(--f-body);color:#7a5a14;background:rgba(155,122,47,.08)}}
 
-.vs{{inset:auto;left:7%;top:20%;width:172%;height:138%;transform:scale(.5);transform-origin:0 0;display:grid;grid-template-rows:repeat(10,1fr)}}
-.vr2{{direction:rtl;display:grid;grid-template-columns:1fr 1fr;gap:3%;align-items:center;font-family:var(--f-poem);font-size:calc(var(--W) * .052 * var(--fk,1));line-height:1.2;color:#33241a}}
-.vr2 span{{direction:rtl;white-space:nowrap;overflow:hidden;text-align:center;font-size:calc(var(--W) * .052 * var(--fk,1))}}
-
-.vs{{grid-template-rows:repeat(20,1fr)}}
-.vl{{direction:rtl;white-space:nowrap;overflow:hidden;line-height:1;display:flex;align-items:center;font-family:var(--f-poem);font-size:calc(var(--W) * .062 * var(--fk,1));color:#33241a;text-align:start}}
-.vl:nth-child(even){{justify-content:flex-end}}
-
-.vs{{display:flex;flex-direction:column;justify-content:space-between;grid-template-rows:none}}
-.bt{{display:block}}
-.bt::after{{content:none!important}}
-.vl{{display:block;direction:rtl;overflow:visible;line-height:2.15;font-size:calc(var(--W) * .078 * var(--fk,1))}}
-.vl.a{{text-align:right;padding-inline-start:3%}}
-.vl.b{{text-align:left;padding-inline-end:3%}}
+.vs{{position:absolute;inset:18% 9% 7% 9%;display:flex;flex-direction:column;justify-content:space-evenly;direction:rtl;overflow:hidden;box-sizing:border-box}}
+.bt{{display:flex;flex-direction:column;justify-content:center;width:100%;margin-block:1px;overflow:hidden}}
+.vl{{display:block;width:100%;direction:rtl;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--f-poem);font-size:calc(var(--W) * .068 * var(--fk,1));line-height:1.55;color:#33241a;box-sizing:border-box}}
+.vl.a{{text-align:right;padding-inline-start:6px;padding-inline-end:2px}}
+.vl.b{{text-align:left;padding-inline-end:6px;padding-inline-start:2px}}
 
 .petals{{position:absolute;left:0;top:0;pointer-events:none;transition:opacity .4s}}
 .phone.drawing .petals,.phone.zooming .petals{{opacity:0}}
