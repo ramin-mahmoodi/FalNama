@@ -42,7 +42,7 @@ renderHistory=function(){
 const EMB='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" stroke="#f0cf7a" stroke-width="3.1" stroke-linejoin="round"><path d="M40 4H43Q43.5 4 44 4.5L48.5 9H53Q54 9 54.5 10L57.25 15.5Q57.75 16.5 58.75 16.5H64A.5.5 0 0 1 64.5 17V25A1.5 1.5 0 0 0 66 26.5H67A1.5 1.5 0 0 1 68.5 28V33A1.5 1.5 0 0 0 70 34.5H71Q71.5 34.5 72 35L74 37L76 40L74 43L72 45Q71.5 45.5 71 45.5H70A1.5 1.5 0 0 0 68.5 47V52A1.5 1.5 0 0 1 67 53.5H66A1.5 1.5 0 0 0 64.5 55V63A.5.5 0 0 1 64 63.5H58.75Q57.75 63.5 57.25 64.5L54.5 70Q54 71 53 71H48.5L44 75.5Q43.5 76 43 76H37Q36.5 76 36 75.5L31.5 71H27Q26 71 25.5 70L22.75 64.5Q22.25 63.5 21.25 63.5H16A.5.5 0 0 1 15.5 63V55A1.5 1.5 0 0 0 14 53.5H13A1.5 1.5 0 0 1 11.5 52V47A1.5 1.5 0 0 0 10 45.5H9Q8.5 45.5 8 45L6 43L4 40L6 37L8 35Q8.5 34.5 9 34.5H10A1.5 1.5 0 0 0 11.5 33V28A1.5 1.5 0 0 1 13 26.5H14A1.5 1.5 0 0 0 15.5 25V17A.5.5 0 0 1 16 16.5H21.25Q22.25 16.5 22.75 15.5L25.5 10Q26 9 27 9H31.5L36 4.5Q36.5 4 37 4Z"/><path d="M35.75 35H44.25A3.25 3.25 0 0 1 47.5 38.25V41.75A3.25 3.25 0 0 1 44.25 45H35.75A3.25 3.25 0 0 1 32.5 41.75V38.25A3.25 3.25 0 0 1 35.75 35Z"/><path d="M24.5 37.75H27.75V42.25H24.5M18 40C18.75 38.75 20.5 36 22 36 23.1 36 24 36.9 24.5 37.75V42.25C24 43.1 23.1 44 22 44 20.5 44 18.75 41.25 18 40ZM55.5 37.75H52.25V42.25H55.5M62 40C61.25 38.75 59.5 36 58 36 56.9 36 56 36.9 55.5 37.75V42.25C56 43.1 56.9 44 58 44 59.5 44 61.25 41.25 62 40ZM37.75 24.5V29.25H42.25V24.5M40 18C41.25 18.75 44 20.5 44 22 44 23.1 43.1 24 42.25 24.5H37.75C36.9 24 36 23.1 36 22 36 20.5 38.75 18.75 40 18ZM37.75 55.5V50.75H42.25V55.5M40 62C41.25 61.25 44 59.5 44 58 44 56.9 43.1 56 42.25 55.5H37.75C36.9 56 36 56.9 36 58 36 59.5 38.75 61.25 40 62Z"/></svg>';
 async function buildCard(e){
   const f=FALS[e.f];
-  try{await Promise.all([document.fonts.load('40px "Noto Nastaliq Urdu"'),document.fonts.load('100px Lalezar'),document.fonts.load('600 40px Vazirmatn')])}catch(_){}
+  try{await Promise.all([document.fonts.load('44px "IranNastaliq"'),document.fonts.load('100px Lalezar'),document.fonts.load('600 40px Vazirmatn')])}catch(_){}
   const W=1080,H=1560,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
   x.fillStyle="#ebd9b8";x.fillRect(0,0,W,H);
   x.strokeStyle="rgba(185,138,85,.16)";x.lineWidth=2;
@@ -67,8 +67,8 @@ async function buildCard(e){
   bs.forEach((bt,i)=>{
     const y=cy0+108+i*step;
     [[bt[0],"right",cx1-64,y],[bt[1],"left",cx0+64,y+58]].forEach(([t,al,px,py])=>{
-      let fs=40;x.font=fs+"px 'Noto Nastaliq Urdu', 'Aref Ruqaa', Vazirmatn, serif";
-      while(x.measureText(t).width>700&&fs>22){fs-=2;x.font=fs+"px 'Noto Nastaliq Urdu', 'Aref Ruqaa', Vazirmatn, serif"}
+      let fs=44;x.font=fs+"px 'IranNastaliq', 'Vazirmatn', serif";
+      while(x.measureText(t).width>700&&fs>22){fs-=2;x.font=fs+"px 'IranNastaliq', 'Vazirmatn', serif"}
       x.textAlign=al;x.fillText(t,px,py);
     });
   });
