@@ -170,10 +170,11 @@ html{{scrollbar-width:thin;scrollbar-color:#d1b78c transparent}}
 .pn{{display:none}}
 .cart{{display:grid;place-items:center;top:10.5%;height:calc(var(--H) * .06);left:34%;right:34%;font:600 calc(var(--W) * .052)/1 var(--f-body);color:#7a5a14;background:rgba(155,122,47,.08)}}
 
-.cart{{position:absolute;display:grid;place-items:center;top:10%;left:22%;right:22%;height:calc(var(--H) * .056);border-radius:10px;font:700 calc(var(--W) * .046)/1 var(--f-body);color:#7a573c;background:rgba(150,105,65,.1);box-shadow:inset 0 0 0 1px rgba(150,105,65,.2)}}
-.vs{{position:absolute;inset:18% 11% 8% 11%;display:flex;flex-direction:column;justify-content:space-evenly;direction:rtl;overflow:hidden;box-sizing:border-box}}
-.bt{{display:flex;flex-direction:column;width:100%;margin-block:2px;overflow:hidden}}
-.vl{{display:block;max-width:76%;direction:rtl;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--f-poem);font-size:calc(var(--W) * .031 * var(--fk,1));line-height:1.55;color:#33241a;box-sizing:border-box}}
+.cart{{position:absolute;display:grid;place-items:center;top:9%;left:20%;right:20%;height:calc(var(--H) * .058);border-radius:10px;font:700 calc(var(--W) * .048)/1 var(--f-body);color:#7a573c;background:rgba(150,105,65,.1);box-shadow:inset 0 0 0 1px rgba(150,105,65,.22)}}
+.vs{{position:absolute;inset:17% 10% 7% 10%;display:flex;flex-direction:column;justify-content:space-evenly;direction:rtl;overflow:hidden;box-sizing:border-box}}
+.bt{{display:flex;flex-direction:column;width:100%;margin-block:calc(var(--H) * .018);padding-bottom:calc(var(--H) * .014);border-bottom:1px dashed rgba(185,138,85,0.35);overflow:hidden}}
+.bt:last-child{{border-bottom:none;margin-bottom:0;padding-bottom:0}}
+.vl{{display:block;max-width:78%;direction:rtl;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--f-poem);font-size:calc(var(--W) * .038 * var(--fk,1));line-height:1.5;color:#33241a;box-sizing:border-box}}
 .vl.a{{text-align:right;margin-inline-start:0;margin-inline-end:auto;padding-inline-start:4px}}
 .vl.b{{text-align:left;margin-inline-start:auto;margin-inline-end:0;padding-inline-end:4px}}
 
@@ -238,7 +239,7 @@ _a=s.index('<div class="actions">'); _b=s.index("';",_a)
 s=s[:_a]+'<button id="copy" hidden></button>'+s[_b:]
 _old=s[s.index('function pageFace(i,side){'):s.index('const cn=p=>')]
 _new='''function poemLines(gi){
-  return FALS[gi].beyts.slice(0,5).map(b=>'<div class="bt"><div class="vl a">'+b[0]+'</div><div class="vl b">'+b[1]+'</div></div>').join('');
+  return FALS[gi].beyts.slice(0,4).map(b=>'<div class="bt"><div class="vl a">'+b[0]+'</div><div class="vl b">'+b[1]+'</div></div>').join('');
 }
 function pageFace(i,side){
   const r=mulberry(i*17+(side==='b'?5:1));
