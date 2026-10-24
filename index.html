@@ -113,12 +113,12 @@ button:focus-visible{outline:2px solid var(--turq);outline-offset:2px}
 @keyframes bob{50%{transform:translateY(-8px)}}
 .rig{
   position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d;
-  transition:transform 1.25s cubic-bezier(.55,.05,.25,1);
+  /* static initial */
   --tilt:0deg;
-  transform:rotateX(0deg) rotateY(-28deg) scale(1.2) translateX(calc(var(--W) / 2));
+  transform:rotateX(0deg) rotateY(-28deg) scale(1.2) translateX(calc(var(--W) / 2 + 7px));
 }
 /* prep: the book turns to face the reader before the cover lifts */
-.rig.prep{transform:rotateX(0deg) rotateY(-8deg) scale(1.12) translateX(calc(var(--W) / 2));transition-duration:.65s}
+.rig.prep{transform:rotateX(0deg) rotateY(-8deg) scale(1.12) translateX(calc(var(--W) / 2 + 7px));transition-duration:.65s}
 /* open: both page stacks lean away from the gutter, so the spread forms a shallow valley like a bound book */
 .rig.open{--tilt:6deg;transform:rotateX(0deg) rotateY(0deg) scale(1) translateX(0px);transition-duration:1.5s}
 .rig.zoom{--tilt:0deg;transform:rotateX(0deg) rotateY(0deg) scale(var(--zoom)) translateX(calc(var(--W) / 2));transition-duration:1.5s}
@@ -424,7 +424,7 @@ html{scrollbar-width:thin;scrollbar-color:#d1b78c transparent}
 .appbar p{display:none}
 .hint{padding:0 24px 106px;display:flex;justify-content:center;align-items:center;cursor:pointer}
 .hint small{display:none!important}
-.hint strong{height:60px;min-width:250px;padding:0 26px 0 12px;gap:12px;border-radius:30px;font:400 24px 'Lalezar','Vazirmatn',sans-serif;letter-spacing:.01em;
+.hint strong{height:60px;min-width:250px;padding:0 18px;gap:12px;border-radius:30px;font:400 24px 'Lalezar','Vazirmatn',sans-serif;letter-spacing:.01em;
   background:linear-gradient(180deg,#e8665b,#d9534a);box-shadow:0 6px 0 #a8362d,0 14px 22px rgba(168,54,45,.35);animation:cta 2.2s ease-in-out infinite;transition:transform .12s,box-shadow .12s;display:inline-flex;align-items:center;justify-content:center}
 .hint strong:active{transform:translateY(4px);box-shadow:0 2px 0 #a8362d,0 6px 12px rgba(168,54,45,.3)}
 .hint strong::before{content:"";display:block;width:40px;height:40px;border-radius:50%;flex:none;rotate:0deg;
