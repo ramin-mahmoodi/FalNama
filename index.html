@@ -449,13 +449,37 @@ html{scrollbar-width:thin;scrollbar-color:#d1b78c transparent}
 .scroll{padding-bottom:120px}
 .actions{grid-template-columns:1fr}
 #copy{display:none}
-.fabs{position:absolute;left:16px;bottom:118px;z-index:6;display:none;flex-direction:column;gap:12px}
+.fabs{position:absolute;left:16px;bottom:104px;z-index:10;display:none;flex-direction:column;align-items:flex-start}
 .phone[data-screen="result"] .fabs{display:flex}
-.fab{width:54px;height:54px;border-radius:50%;border:0;display:grid;place-items:center;background:#fff4e0;color:#7a573c;box-shadow:0 8px 20px rgba(110,60,35,.28),0 0 0 1px rgba(150,105,65,.12);transition:transform .12s}
-.fab:active{transform:scale(.92)}
-.fab svg{width:26px;height:26px}
-.fab#fav{color:#d9534a}
-.fab .heart.on{fill:#d9534a;stroke:#d9534a}
+.fab-main{width:50px;height:50px;border-radius:50%;border:0;background:linear-gradient(180deg,#e8665b,#d9534a);color:#fff4e4;box-shadow:0 8px 22px rgba(178,61,51,.42),0 0 0 1px rgba(255,255,255,.2);display:grid;place-items:center;cursor:pointer;position:relative;z-index:2;transition:transform .15s}
+.fab-main:active{transform:scale(.9)}
+.fab-main .fab-plus{transition:transform .35s cubic-bezier(.68,-.55,.265,1.55)}
+.fabs.open .fab-main .fab-plus{transform:rotate(135deg)}
+.fabs.open .fab-main{animation:jellyTap .45s cubic-bezier(.34,1.56,.64,1)}
+@keyframes jellyTap{
+  0%{transform:scale(1)}
+  35%{transform:scale(1.22,.82)}
+  60%{transform:scale(.92,1.12)}
+  80%{transform:scale(1.05,.96)}
+  100%{transform:scale(1)}
+}
+.fabs-menu{position:absolute;bottom:58px;left:0;display:flex;flex-direction:column-reverse;gap:10px;pointer-events:none}
+.fabs.open .fabs-menu{pointer-events:auto}
+.fab-item{display:flex;align-items:center;gap:10px;opacity:0;transform:translateY(24px) scale(.25);transform-origin:22px bottom;transition:transform .22s cubic-bezier(.4,0,.2,1),opacity .18s;pointer-events:none}
+.fabs.open .fab-item{opacity:1;pointer-events:auto;animation:jellyPop .48s cubic-bezier(.34,1.56,.64,1) both;animation-delay:calc(var(--i) * .055s)}
+@keyframes jellyPop{
+  0%{opacity:0;transform:translateY(24px) scale(.2)}
+  50%{opacity:1;transform:translateY(-8px) scale(1.18,.84)}
+  70%{transform:translateY(3px) scale(.94,1.08)}
+  85%{transform:translateY(-1px) scale(1.03,.98)}
+  100%{opacity:1;transform:translateY(0) scale(1)}
+}
+.fab-sub{width:44px;height:44px;border-radius:50%;border:1px solid rgba(150,105,65,.15);background:#fff7e6;color:#7a573c;box-shadow:0 6px 16px rgba(110,60,35,.22);display:grid;place-items:center;cursor:pointer;transition:transform .12s,background .15s}
+.fab-sub:active{transform:scale(.88)}
+.fab-sub svg{width:20px;height:20px}
+.fab-sub#fav{color:#d9534a}
+.fab-sub .heart.on{fill:#d9534a;stroke:#d9534a}
+.fab-label{background:#fff7e6;color:#4a3426;padding:4px 10px;border-radius:12px;font-family:var(--f-display);font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(110,60,35,.14),0 0 0 1px rgba(150,105,65,.08);white-space:nowrap;pointer-events:none}
 
 .pattern{display:block;opacity:1;mix-blend-mode:normal;background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2272%22 height=%2272%22 viewBox=%220 0 72 72%22 fill=%22none%22 stroke=%22%23b98a55%22 stroke-opacity=%22.13%22 stroke-width=%221.3%22 stroke-linejoin=%22round%22%3E%3Crect x=%2216%22 y=%2216%22 width=%2240%22 height=%2240%22/%3E%3Crect x=%2216%22 y=%2216%22 width=%2240%22 height=%2240%22 transform=%22rotate(45 36 36)%22/%3E%3Ccircle cx=%2236%22 cy=%2236%22 r=%227%22/%3E%3Ccircle cx=%2236%22 cy=%2236%22 r=%222%22 fill=%22%23b98a55%22 fill-opacity=%22.13%22 stroke=%22none%22/%3E%3Cpath d=%22M0 0l5 5M72 0l-5 5M0 72l5-5M72 72l-5-5%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M36 0v10M36 62v10M0 36h10M62 36h10%22 stroke-linecap=%22round%22/%3E%3C/svg%3E");background-size:72px 72px}
 #result{background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2272%22 height=%2272%22 viewBox=%220 0 72 72%22 fill=%22none%22 stroke=%22%23b98a55%22 stroke-opacity=%22.13%22 stroke-width=%221.3%22 stroke-linejoin=%22round%22%3E%3Crect x=%2216%22 y=%2216%22 width=%2240%22 height=%2240%22/%3E%3Crect x=%2216%22 y=%2216%22 width=%2240%22 height=%2240%22 transform=%22rotate(45 36 36)%22/%3E%3Ccircle cx=%2236%22 cy=%2236%22 r=%227%22/%3E%3Ccircle cx=%2236%22 cy=%2236%22 r=%222%22 fill=%22%23b98a55%22 fill-opacity=%22.13%22 stroke=%22none%22/%3E%3Cpath d=%22M0 0l5 5M72 0l-5 5M0 72l5-5M72 72l-5-5%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M36 0v10M36 62v10M0 36h10M62 36h10%22 stroke-linecap=%22round%22/%3E%3C/svg%3E") 0 0/72px 72px,#ebd9b8}
@@ -476,7 +500,6 @@ html{scrollbar-width:thin;scrollbar-color:#d1b78c transparent}
 .bottomnav button.on{background:linear-gradient(180deg,#e8665b,#d9534a)!important;color:#fff4e4!important;box-shadow:0 6px 14px rgba(178,61,51,.38)!important}
 .scroll{padding-bottom:132px}
 .list{padding-bottom:116px}
-.fabs{bottom:120px}
 
 .pn{display:none}
 .cart{position:absolute;display:grid;place-items:center;top:9%;left:20%;right:20%;height:calc(var(--H) * .058);border-radius:10px;font:700 calc(var(--W) * .048)/1 var(--f-body);color:#7a573c;background:rgba(150,105,65,.1);box-shadow:inset 0 0 0 1px rgba(150,105,65,.22)}
@@ -572,7 +595,25 @@ html{scrollbar-width:thin;scrollbar-color:#d1b78c transparent}
     <div class="scroll" id="rbody"></div>
   </section>
 
-  <div class="fabs"><button class="fab" id="fav" aria-label="افزودن به علاقه‌مندی‌ها"><svg class="heart" viewBox="0 0 24 24" width="22" height="22"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.500A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg></button><button class="fab" id="copyfab" aria-label="کپی غزل"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8.500" y="8.500" width="11" height="11.500" rx="2.500" fill="currentColor" fill-opacity=".15"/><path d="M15.500 8.500V6.500a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button><button class="fab" id="sharefab" aria-label="ذخیره کارت فال"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7.500 10.500L12 15l4.500-4.500"/><path d="M5 15v3.500a1.500 1.500 0 0 0 1.500 1.500h11a1.500 1.500 0 0 0 1.500-1.500V15"/></svg></button></div>
+  <div class="fabs" id="fabs">
+    <div class="fabs-menu">
+      <div class="fab-item" style="--i:3">
+        <span class="fab-label">ذخیره عکس</span>
+        <button class="fab-sub" id="sharefab" aria-label="ذخیره کارت فال"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7.500 10.500L12 15l4.500-4.500"/><path d="M5 15v3.500a1.500 1.500 0 0 0 1.500 1.500h11a1.500 1.500 0 0 0 1.500-1.500V15"/></svg></button>
+      </div>
+      <div class="fab-item" style="--i:2">
+        <span class="fab-label">کپی غزل</span>
+        <button class="fab-sub" id="copyfab" aria-label="کپی غزل"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8.500" y="8.500" width="11" height="11.500" rx="2.500" fill="currentColor" fill-opacity=".15"/><path d="M15.500 8.500V6.500a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+      </div>
+      <div class="fab-item" style="--i:1">
+        <span class="fab-label">نشان کردن</span>
+        <button class="fab-sub" id="fav" aria-label="افزودن به علاقه‌مندی‌ها"><svg class="heart" viewBox="0 0 24 24" width="22" height="22"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.500A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg></button>
+      </div>
+    </div>
+    <button class="fab-main" id="fabmain" aria-label="امکانات فال">
+      <svg class="fab-plus" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    </button>
+  </div>
   <nav class="bottomnav" id="nav" aria-label="منوی اصلی">
     <button data-tab="home" class="on"><span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8C10 6.200 7 5.800 3.500 6.200v12.300c3.500-.4 6.500 0 8.500 1.500 2-1.500 5-1.900 8.500-1.500V6.200C17 5.800 14 6.200 12 8z" fill="currentColor" fill-opacity=".18"/><path d="M12 8v12"/><path d="M18.700 1.300l.8 1.800 1.800.8-1.800.8-.8 1.800-.8-1.800-1.800-.8 1.800-.8z" fill="currentColor" stroke="none"/></svg></span>فال</button>
     <button data-tab="history"><span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" fill="currentColor" fill-opacity=".18"/><path d="M12 6.800V12l3.600 2.200"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></span>تاریخچه</button>
@@ -990,6 +1031,26 @@ async function shareCard(){
     setTimeout(()=>URL.revokeObjectURL(a.href),4000);toast("کارت ذخیره شد");
   }catch(err){toast("ساخت کارت ممکن نشد")}
 }
+try{
+  const fabs = document.getElementById('fabs');
+  const fabmain = document.getElementById('fabmain');
+  if(fabmain && fabs){
+    fabmain.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      fabs.classList.toggle('open');
+    });
+    document.addEventListener('click', (e)=>{
+      if(fabs.classList.contains('open') && !fabs.contains(e.target)){
+        fabs.classList.remove('open');
+      }
+    });
+    fabs.querySelectorAll('.fab-sub').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        setTimeout(()=>fabs.classList.remove('open'), 180);
+      });
+    });
+  }
+}catch(e){}
 try{document.getElementById("sharefab").addEventListener("click",shareCard)}catch(e){}
 try{document.getElementById('hint').addEventListener('click',()=>document.getElementById('hit').click())}catch(e){}
 })();
