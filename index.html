@@ -414,22 +414,18 @@ body{background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/s
 html{scrollbar-width:thin;scrollbar-color:#d1b78c transparent}
 
 /* header font, graphic CTA, bigger nav */
-.appbar h1{font:400 54px/1.15 'Lalezar','Vazirmatn',sans-serif;letter-spacing:0;padding:16px 26px 10px;text-shadow:3px 3px 0 rgba(217,83,74,.18)}
-.appbar h1::before,.appbar h1::after{height:7px}
+.appbar{padding:clamp(10px,2.8vh,26px) 16px 0;text-align:center;flex:none;z-index:5;transition:opacity .5s}
+.appbar h1{position:relative;display:inline-block;font-family:'Lalezar','Vazirmatn',sans-serif;font-weight:400;font-size:clamp(24px,min(8.5vw,4.8vh),42px);line-height:1.25;padding:16px 28px 13px;color:#2b2420;text-shadow:2px 2px 0 rgba(217,83,74,.18);letter-spacing:0;box-sizing:border-box}
+.appbar h1 span{color:#d9534a}
+.appbar h1::before,.appbar h1::after{content:"";position:absolute;left:0;right:0;height:5px;background:repeating-linear-gradient(90deg,#c8ae82 0 7px,transparent 7px 11px);pointer-events:none}
+.appbar h1::before{top:0}
+.appbar h1::after{bottom:0}
 .appbar p{display:none}
-.hint{padding-bottom:104px}
-.hint small{display:none}
-.hint strong{height:60px;min-width:250px;padding:0 26px 0 12px;gap:12px;border-radius:30px;font:400 24px 'Lalezar','Vazirmatn',sans-serif;letter-spacing:.01em;
-  background:linear-gradient(180deg,#e8665b,#d9534a);box-shadow:0 6px 0 #a8362d,0 14px 22px rgba(168,54,45,.35);animation:cta 2.2s ease-in-out infinite;transition:transform .12s,box-shadow .12s}
-.hint strong:active{transform:translateY(4px);box-shadow:0 2px 0 #a8362d,0 6px 12px rgba(168,54,45,.3)}
-.hint strong::before{content:"";display:block;width:40px;height:40px;border-radius:50%;flex:none;rotate:0deg;
-  background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23d9534a%22 stroke-width=%221.9%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M12 7C10 5.600 7 5.200 3.500 5.600v12.400c3.500-.4 6.500 0 8.500 1.500 2-1.500 5-1.900 8.500-1.500V5.600C17 5.200 14 5.600 12 7z%22 fill=%22%23d9534a%22 fill-opacity=%22.18%22/%3E%3Cpath d=%22M12 7v12.500%22/%3E%3Cpath d=%22M18.500 1.200l.7 1.600 1.600.7-1.600.7-.7 1.600-.7-1.600-1.600-.7 1.600-.7z%22 fill=%22%23d9534a%22 stroke=%22none%22/%3E%3C/svg%3E") center/24px no-repeat,#fff4e4;box-shadow:inset 0 -3px 0 rgba(168,54,45,.18);animation:none}
-.hint strong::after{content:none}
-@keyframes cta{50%{transform:translateY(-3px)}}
-.bottomnav{padding:10px 18px 16px}
-.bottomnav button{font-size:13px;font-weight:600;gap:5px}
-.bottomnav .pill{width:78px;height:44px;border-radius:18px}
-.bottomnav .pill svg{width:30px;height:30px}
+.hint{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(4px,1vh,10px) 16px clamp(6px,1.2vh,12px)!important;margin:0!important;cursor:pointer;z-index:5;transition:opacity .35s}
+.hint strong{height:clamp(42px,5.8vh,52px)!important;min-width:clamp(170px,50vw,240px)!important;padding:0 clamp(16px,4vw,24px)!important;gap:10px!important;border-radius:26px!important;background:#d9534a!important;color:#fff4e4!important;font:400 clamp(16px,4vw,20px) 'Lalezar','Vazirmatn',sans-serif!important;letter-spacing:.01em!important;box-shadow:0 4px 14px rgba(168,54,45,.35)!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;transition:transform .12s,box-shadow .12s!important}
+.hint strong:active{transform:translateY(2px)!important;box-shadow:0 2px 6px rgba(168,54,45,.3)!important}
+.hint strong::before{content:""!important;display:block!important;width:clamp(26px,5vw,34px)!important;height:clamp(26px,5vw,34px)!important;border-radius:50%!important;flex:none!important;background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23d9534a%22 stroke-width=%221.9%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M12 7C10 5.600 7 5.200 3.500 5.600v12.400c3.500-.4 6.500 0 8.500 1.500 2-1.500 5-1.900 8.500-1.500V5.600C17 5.200 14 5.600 12 7z%22 fill=%22%23d9534a%22 fill-opacity=%22.18%22/%3E%3Cpath d=%22M12 7v12.500%22/%3E%3Cpath d=%22M18.500 1.200l.7 1.600 1.600.7-1.600.7-.7 1.600-.7-1.600-1.600-.7 1.600-.7z%22 fill=%22%23d9534a%22 stroke=%22none%22/%3E%3C/svg%3E") center/contain no-repeat,#fff4e4!important}
+.hint strong::after{content:none!important}
 
 /* poem tweaks, right-side scrollbar, history icon */
 .m1,.m2{animation-duration:.35s}
@@ -468,11 +464,11 @@ html{scrollbar-width:thin;scrollbar-color:#d1b78c transparent}
 .phone.zooming .pattern{opacity:.5}
 
 /* floating capsule nav */
-.bottomnav{inset-inline:16px;bottom:16px;padding:8px;gap:8px;background:#fff7e6;border:0;border-radius:30px!important;box-shadow:0 16px 34px rgba(110,60,35,.26),0 0 0 1px rgba(150,105,65,.12)}
-.bottomnav button{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:9px;height:58px;border-radius:24px;color:#a58665;font:600 15px var(--f-display);transition:background .2s,color .2s,box-shadow .2s}
-.bottomnav .pill,.bottomnav button.on .pill{width:auto;height:auto;background:none;box-shadow:none;border-radius:0;color:inherit}
-.bottomnav .pill svg{width:27px;height:27px}
-.bottomnav button.on{background:linear-gradient(180deg,#e8665b,#d9534a);color:#fff4e4;box-shadow:0 6px 14px rgba(178,61,51,.38)}
+.bottomnav{position:absolute!important;inset-inline:clamp(10px,3.5vw,18px)!important;bottom:clamp(6px,1.5vh,14px)!important;height:clamp(48px,6.8vh,58px)!important;display:flex!important;align-items:center!important;padding:4px 6px!important;gap:8px!important;background:#fff7e6!important;border:0!important;border-radius:28px!important;box-shadow:0 10px 28px rgba(110,60,35,.22),0 0 0 1px rgba(150,105,65,.12)!important;z-index:20!important;box-sizing:border-box!important}
+.bottomnav button{flex:1!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;gap:clamp(6px,2vw,10px)!important;height:100%!important;border-radius:22px!important;border:0!important;background:transparent!important;color:#a58665!important;font-family:'Vazirmatn',system-ui,sans-serif!important;font-weight:600!important;font-size:clamp(12px,3.4vw,14.5px)!important;cursor:pointer!important;transition:background .2s,color .2s,box-shadow .2s!important}
+.bottomnav .pill,.bottomnav button.on .pill{width:auto!important;height:auto!important;background:none!important;box-shadow:none!important;border-radius:0!important;color:inherit!important;display:flex!important;align-items:center!important}
+.bottomnav .pill svg{width:clamp(20px,5.5vw,26px)!important;height:clamp(20px,5.5vw,26px)!important}
+.bottomnav button.on{background:linear-gradient(180deg,#e8665b,#d9534a)!important;color:#fff4e4!important;box-shadow:0 4px 12px rgba(178,61,51,.38)!important}
 .scroll{padding-bottom:132px}
 .list{padding-bottom:116px}
 .fabs{bottom:120px}
@@ -520,31 +516,17 @@ html{scrollbar-width:thin;scrollbar-color:#d1b78c transparent}
 .hwrap .hitem::before{content:"";position:absolute;inset-inline-start:-23px;top:22px;width:10px;height:10px;border-radius:50%;background:#d9534a;box-shadow:0 0 0 3px #ebd9b8}
 .hwrap.drag .hitem::before{display:none}
 
-/* Responsive layout for shorter/older phone screens (prevents book/text overlap) */
-@media (max-height: 740px) {
-  .appbar { padding: 18px 16px 0 !important; }
-  .appbar h1 { font-size: clamp(26px, 6.5vw, 34px) !important; padding: 6px 16px 4px !important; }
-  .hint { padding-bottom: 74px !important; }
-  .hint strong { height: 44px !important; min-width: 190px !important; font-size: 17px !important; }
-  .bottomnav { inset-inline: 12px !important; bottom: 8px !important; padding: 6px !important; border-radius: 20px !important; }
-  .bottomnav button { height: 44px !important; font-size: 13px !important; }
+/* Responsive adjustments: fluid layout with clean bottom clearance */
+#home, #history {
+  padding-bottom: clamp(66px, 9vh, 84px) !important;
+  box-sizing: border-box !important;
 }
-@media (max-height: 620px) {
-  .appbar { padding: 8px 12px 0 !important; }
-  .appbar h1 { font-size: 22px !important; padding: 4px 12px 2px !important; }
-  .hint { padding-bottom: 56px !important; }
-  .hint strong { height: 38px !important; min-width: 160px !important; font-size: 14px !important; }
-  .bottomnav { inset-inline: 8px !important; bottom: 4px !important; padding: 4px !important; border-radius: 16px !important; }
-  .bottomnav button { height: 38px !important; font-size: 12px !important; }
+#result {
+  padding-bottom: clamp(70px, 9.5vh, 90px) !important;
+  box-sizing: border-box !important;
+}
+@media (max-height: 600px) {
   @keyframes bob { 50% { transform: translateY(-3px); } }
-}
-@media (max-height: 520px) {
-  .appbar { padding: 4px 10px 0 !important; }
-  .appbar h1 { font-size: 18px !important; padding: 2px 10px !important; }
-  .hint { padding-bottom: 46px !important; }
-  .hint strong { height: 32px !important; min-width: 140px !important; font-size: 12px !important; }
-  .bottomnav { display: none !important; }
-  #home { padding-bottom: 0 !important; }
 }
 </style>
   <script src="fals.js" defer></script>
@@ -645,15 +627,16 @@ function fitPages(scope){(scope?scope.querySelectorAll(".vl"):document.querySele
 function layout(){
   const r=stage.getBoundingClientRect();
   if(!r.width||!r.height) return;
-  const W=Math.max(90,Math.min(r.width*0.40,(r.height*0.54)/1.44));
-  stage.style.setProperty('--W',W+'px');
-  stage.style.setProperty('--H',(W*1.44)+'px');
-  stage.style.setProperty('--zoom',(r.width*0.9/W).toFixed(3));
+  const maxH_W = Math.max(55, ((r.height * 0.68) / 1.2 - 14) / 1.44);
+  const maxW_W = r.width * 0.38;
+  const W = Math.round(Math.min(maxW_W, maxH_W, 165));
+  stage.style.setProperty('--W', W+'px');
+  stage.style.setProperty('--H', (W*1.44)+'px');
+  stage.style.setProperty('--zoom', (Math.min(r.width*0.9, 380)/W).toFixed(3));
 }
 layout();
 if('ResizeObserver' in window) new ResizeObserver(layout).observe(stage); else addEventListener('resize',layout);
 
-/* ---------- وضعیت و تاریخچه ---------- */
 function populateBook(){
   const list = getFals();
   if(!list || !list.length) return;
